@@ -1,0 +1,43 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "dependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-config-node": "^4.0.0",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "eslint-plugin-import": "^2.18.2",
+    "prettier": "^1.19.1"
+  },
+  "devDependencies": {
+    "husky": "^3.1.0",
+    "lint": "^0.7.0"
+  },
+  "scripts": {
+    "test": "npm run lint",
+    "start": "node script.js",
+    "lint": "eslint --ignore-path .gitignore ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint -- --fix && npx prettier script.js --write"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iryna-stepaniuk/Node.js.git"
+  },
+  "author": "Stepaniuk Iryna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iryna-stepaniuk/Node.js/issues"
+  },
+  "homepage": "https://github.com/iryna-stepaniuk/Node.js#readme"
+}
