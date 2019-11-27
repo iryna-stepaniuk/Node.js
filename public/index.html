@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Deploying... </title>
+    <title>Part12.... </title>
     <script>
         function check(s1,s2) {
             var ok = true;
@@ -14,8 +14,10 @@
                 }
                 if (!found) ok = false;
             }
+            
             return ok;
         }
+
         function CorrectName(obj) {
             var s=""
             if (obj.name.value == "") s+="Ім'я не вказане"
@@ -40,7 +42,9 @@
     </script>
 </head>
 
+
 <body>
+
 <h3>1. Уточнити контроль коректності імені користувача на ваш розсуд</h3>
 <form name="form1">
     Введіть ім'я:<br>
@@ -59,15 +63,7 @@
            onClick="CorrectEmail(form2)"><hr>
     Відповідь: <input type="text" name="result" size=15><hr>
     <input type="reset" value="Скасувати">
-</form>
-<h3>3. Уточнити контроль коректності телефонного номеру на ваш розсуд</h3>
-<form name="form3">
-    Введіть номер:<br>
-    <textarea name="number" rows=4 cols=20></textarea><hr>
-    <input type="button" value="Контроль"
-           onClick="CorrectNumber(form3)"><hr>
-    Відповідь: <input type="text" name="result" size=15><hr>
-    <input type="reset" value="Скасувати">
-</form>
+
+
 </body>
 </html>
