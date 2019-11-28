@@ -1,18 +1,12 @@
 language: node_js
 node_js:
 - node
-before_install:
-  - npm i -g firebase-tools
 script:
   - npm run lint
 after_success:
   - npm run deploy
 notifications:
   email: false
-deploy:
-  provider: firebase
-  token: $FIREBASE_TOKEN
 branches:
   only:
     - master
-#todo: do not run on non master branch

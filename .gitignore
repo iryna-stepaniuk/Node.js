@@ -1,5 +1,3 @@
 .vscode/
 *node_modules/*
 .firebase/
-#todo: add firebase cache dir, logs, npm logs
-#todo: add dest dir
