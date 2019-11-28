@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Lab 12.</title>
+    //todo: do not inline script in head, footer or async js rel
     <script>
         function check(s1,s2) {
+            //todo: if you need flag probably something goes wrong
             var ok = true;
+            //todo: read about string prototype methods
             for (var i = 0; i < s1.length && ok; i++) {
                 var chr = s1.charAt(i);
                 var found = false;
@@ -20,12 +23,15 @@
 
         function CorrectName(obj) {
             var s=""
+            // todo: if no name, it will crash
             if (obj.name.value == "") s+="Ім'я не вказане"
+            // todo: read about prototype methods (or if your bold enought about regex)
             else if (!check(obj.name.value,"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwyz")) s+="Некоректні символи" + " "
             else s+="Ім'я коректне"
             obj.result.value=s
         }
         function CorrectEmail(obj) {
+            //todo: read about html5 type=email
             var s=""
             if (obj.email.value == "") s+="Email не вказаний"
             else if (obj.email.value.indexOf('@', 0) == -1) s+="Немає @"+" "
@@ -60,6 +66,7 @@
     Введіть email:<br>
     <textarea name="email" rows=4 cols=20></textarea><hr>
     <input type="button" value="Контроль"
+    <!-- todo: use selfinvoked function with bindnig (add event listener) -->
            onClick="CorrectEmail(form2)"><hr>
     Відповідь: <input type="text" name="result" size=15><hr>
     <input type="reset" value="Скасувати">
