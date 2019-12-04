@@ -4,73 +4,60 @@
     <meta charset="UTF-8">
     <title>Lab 12.</title>
     //todo: do not inline script in head, footer or async js rel
-    <script>
-        function check(s1,s2) {
-            //todo: if you need flag probably something goes wrong
-            var ok = true;
-            //todo: read about string prototype methods
-            for (var i = 0; i < s1.length && ok; i++) {
-                var chr = s1.charAt(i);
-                var found = false;
-                for (var j = 0; j < s2.length && !found; j++) {
-                    if (chr == s2.charAt(j)) found = true;
-                }
-                if (!found) ok = false;
-            }
-            
-            return ok;
-        }
+    <script type="text/javascript" src = "lab.js" ></script>
+<script>
+    const Name = document.getElementById("name");
+const Email = document.getElementById("email");
 
-        function CorrectName(obj) {
-            var s=""
-            // todo: if no name, it will crash
-            if (obj.name.value == "") s+="Ім'я не вказане"
-            // todo: read about prototype methods (or if your bold enought about regex)
-            else if (!check(obj.name.value,"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwyz")) s+="Некоректні символи" + " "
-            else s+="Ім'я коректне"
-            obj.result.value=s
-        }
-        function CorrectEmail(obj) {
-            //todo: read about html5 type=email
-            var s=""
-            if (obj.email.value == "") s+="Email не вказаний"
-            else if (obj.email.value.indexOf('@', 0) == -1) s+="Немає @"+" "
-            else s+="Email коректний"
-            obj.result.value=s
-        }
-        function CorrectNumber(obj) {
-            var s=""
-            if (obj.number.value == "") s+="Номер не вказано"
-            else if (!check(obj.number.value, "1234567890/- ")) s+="Некоректні символи"+" "
-            else s+="Номер коректний"
-            obj.result.value=s
-        }
-    </script>
+Name.addEventListener("onClick", CorrectName);
+Email.addEventListener("onClick", CorrectEmail);
+
+function CorrectName() {
+  let s = "";
+  const x = document.getElementsByName("nameArea");
+  if (x == "") s += "Ім'я не вказане";
+  // todo: read about prototype methods (or if your bold enought about regex)
+  else if ([A - Za - z].exec(x)) s += "Некоректні символи" + " ";
+  else s += "Ім'я коректне";
+  document.getElementsByName("resultName").firstChild.nodeValue = s;
+}
+function CorrectEmail() {
+  // todo: read about html5 type=email
+  let s = "";
+  const x = document.getElementsByName("emailArea");
+  if (x == "") s += "Email не вказаний";
+  else if (x.indexOf("@", 0) == -1) s += "Немає @" + " ";
+  else s += "Email коректний";
+  document.write(s);
+}
+
+</script>
 </head>
-
 
 <body>
 
 <h3>1. Уточнити контроль коректності імені користувача на ваш розсуд</h3>
 <form name="form1">
     Введіть ім'я:<br>
-    <textarea name="name" rows=4 cols=20></textarea><hr>
-    <input type="button" value="Контроль"
-           onClick="CorrectName(form1)"><hr>
-    Відповідь: <input type="text" name="result" size=15><hr>
+    <textarea name="nameArea" rows=4 cols=20></textarea><hr>
+    <button id="name">Контроль</button>
+           //onClick="CorrectName(form1)"
+           <hr>
+    Відповідь: <input type="text" name="resultName" size=15><hr>
     <input type="reset" value="Скасувати">
 </form>
 <h3>2. Уточнити контроль коректності адреси електронної пошти на ваш
     розсуд</h3>
 <form name="form2">
     Введіть email:<br>
-    <textarea name="email" rows=4 cols=20></textarea><hr>
-    <input type="button" value="Контроль"
+    <input type="email" title="Please Provide A Valid Email Address !">
+    <textarea name="emailArea" rows=4 cols=20></textarea><hr>
+    <button id="email">Контроль</button>
     <!-- todo: use selfinvoked function with bindnig (add event listener) -->
-           onClick="CorrectEmail(form2)"><hr>
-    Відповідь: <input type="text" name="result" size=15><hr>
+          // onClick="CorrectEmail(form2)">
+          <hr>
+    Відповідь: <input type="text" name="resultEmail" size=15><hr>
     <input type="reset" value="Скасувати">
-
-
+<form>
 </body>
 </html>

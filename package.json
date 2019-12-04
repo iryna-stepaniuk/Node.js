@@ -16,8 +16,7 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "prettier": "^1.19.1",
     "firebase-tools": "^7.8.1",
-    "husky": "^3.1.0",
-    "lint": "^0.7.0"
+    "husky": "^3.1.0"
   },
   "scripts": {
     "test": "npm run lint",
@@ -39,5 +38,6 @@
   "bugs": {
     "url": "https://github.com/iryna-stepaniuk/Node.js/issues"
   },
-  "homepage": "https://github.com/iryna-stepaniuk/Node.js#readme"
+  "homepage": "https://github.com/iryna-stepaniuk/Node.js#readme",
+  "dependencies": {}
 }
